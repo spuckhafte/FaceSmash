@@ -150,6 +150,7 @@
 
         let path = document.getElementById('left').getAttribute('src').split('')
         path.splice(0,9)
+        ''.join(path)
 
         let index = parseInt(path)
         rank[index]++
@@ -182,6 +183,7 @@
         
         let path = document.getElementById('right').getAttribute('src').split('')
         path.splice(0,9)
+        ''.join(path)
       
         let index = parseInt(path)
         rank[index]++

@@ -50,8 +50,6 @@
         20: 0,
         21: 0
       }
-      const max1 = 21
-      const max2 = 20
       const block = document.getElementById('block')
       const start = document.getElementById('start')
       const rankPage = document.getElementById('rankPage')
@@ -102,14 +100,14 @@
         block.style.display="flex"
         start.style.display="none"
         info.style.display="block"
-        let image1 = getRandomInt(1,max1)
+        let image1 = getRandomInt(1,21)
         let image2 = null
-        {while (true) { image2 = getRandomInt(1,max1); if (image2==image1) {continue} else {break} }}
+        {while (true) { image2 = getRandomInt(1,21); if (image2==image1) {continue} else {break} }}
         document.getElementById('left').setAttribute('src', `./assets/${image1}.jpg`)
         document.getElementById('right').setAttribute('src', `./assets/${image2}.jpg`)
 
         let i=1
-        while (i<=max1) {
+        while (i<=21) {
           let element = document.createElement('IMG')
           element.setAttribute('id', 'imges')
           element.setAttribute('class', 'm-1')
@@ -156,9 +154,9 @@
         rank[index]++
         console.log(index, rank)
 
-        let image1 = getRandomInt(1,max1)
+        let image1 = getRandomInt(1,21)
         let image2 = null
-        {while (true) { image2 = getRandomInt(1,max1); if (image2==image1) {continue} else {break} }}
+        {while (true) { image2 = getRandomInt(1,21); if (image2==image1) {continue} else {break} }}
         
         document.getElementById('left').setAttribute('src', `./assets/${image1}.jpg`)
         document.getElementById('right').setAttribute('src', `./assets/${image2}.jpg`)
@@ -186,11 +184,11 @@
       
         let index = parseInt(path)
         rank[index]++
-        arrange()
+        console.log(index, rank)
 
-        let image1 = getRandomInt(1,max1)
+        let image1 = getRandomInt(1,21)
         let image2 = null
-        {while (true) { image2 = getRandomInt(1,max1); if (image2==image1) {continue} else {break} }}
+        {while (true) { image2 = getRandomInt(1,21); if (image2==image1) {continue} else {break} }}
         
         document.getElementById('left').setAttribute('src', `./assets/${image1}.jpg`)
         document.getElementById('right').setAttribute('src', `./assets/${image2}.jpg`)

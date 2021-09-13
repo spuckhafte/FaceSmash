@@ -50,6 +50,8 @@
         20: 0,
         21: 0
       }
+      const total = 21
+      const sound = new Audio('./assets/effect.wav')
       const block = document.getElementById('block')
       const start = document.getElementById('start')
       const rankPage = document.getElementById('rankPage')
@@ -75,7 +77,7 @@
       function arrange() {
         let removingItem = null
         let list = []
-        let compete = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
+        let compete = [...photos]
         let object = {...rank}
         while (compete.length > 0) {
           removingItem = parseInt(maxKey(object))
@@ -98,17 +100,18 @@
 
 
       function showHide() {
+        sound.play()
         block.style.display="flex"
         start.style.display="none"
         info.style.display="block"
-        let image1 = getRandomInt(1,21)
+        let image1 = getRandomInt(1,total)
         let image2 = null
-        {while (true) { image2 = getRandomInt(1,21); if (image2==image1) {continue} else {break} }}
+        {while (true) { image2 = getRandomInt(1,total); if (image2==image1) {continue} else {break} }}
         document.getElementById('left').setAttribute('src', `./assets/${image1}.jpg`)
         document.getElementById('right').setAttribute('src', `./assets/${image2}.jpg`)
 
         let i=1
-        while (i<=21) {
+        while (i<=total) {
           let element = document.createElement('IMG')
           element.setAttribute('id', 'imges')
           element.setAttribute('class', 'm-1')
@@ -147,7 +150,7 @@
       }
 
       function chooseL() {
-
+        sound.play()
         let path = document.getElementById('left').getAttribute('src').split('')
         path.splice(0,9)
         path = path.join('')
@@ -156,9 +159,9 @@
         rank[index]++
         console.log(index, rank, path)
 
-        let image1 = getRandomInt(1,21)
+        let image1 = getRandomInt(1,total)
         let image2 = null
-        {while (true) { image2 = getRandomInt(1,21); if (image2==image1) {continue} else {break} }}
+        {while (true) { image2 = getRandomInt(1,total); if (image2==image1) {continue} else {break} }}
         
         document.getElementById('left').setAttribute('src', `./assets/${image1}.jpg`)
         document.getElementById('right').setAttribute('src', `./assets/${image2}.jpg`)
@@ -180,7 +183,7 @@
       }
 
       function chooseR() {
-        
+        sound.play()
         let path = document.getElementById('right').getAttribute('src').split('')
         path.splice(0,9)
         path = path.join('')
@@ -189,9 +192,9 @@
         rank[index]++
         console.log(index, rank)
 
-        let image1 = getRandomInt(1,21)
+        let image1 = getRandomInt(1,total)
         let image2 = null
-        {while (true) { image2 = getRandomInt(1,21); if (image2==image1) {continue} else {break} }}
+        {while (true) { image2 = getRandomInt(1,total); if (image2==image1) {continue} else {break} }}
         
         document.getElementById('left').setAttribute('src', `./assets/${image1}.jpg`)
         document.getElementById('right').setAttribute('src', `./assets/${image2}.jpg`)
